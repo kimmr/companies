@@ -1,0 +1,18 @@
+{% extends 'about_companies/base.html' %}
+
+{% block title %}
+  {{ name }}
+{% endblock title %}
+
+
+{% block content %}
+  <h1>{{name}}</h1>
+  <h2>{{symbol}}</h2>
+  <p>This company is found in year of {{year}}
+  {% if is_nasdaq %}
+    , and it is in NASDAQ
+  {% else %}
+    , and it is not in NASDAQ
+  {% endif %}
+  </p>
+{% endblock content %}

@@ -1,0 +1,16 @@
+{% extends 'about_companies/base.html' %}
+
+{% block title %}
+  All Companies
+{% endblock title %}
+
+{% block content %}
+  <ul>
+    {% for company in companies %}
+      <li><a href="{% url 'company-detail' company.slug %}">{{ company.name }} (Founded: {{ company.year }})</a></li>
+    {% endfor %}
+  </ul>
+
+  <p>Total number of Companies: {{total_number_of_companies}}</p>
+  <p>Average number of years founded: {{average_year}}</p>
+{% endblock content %}
