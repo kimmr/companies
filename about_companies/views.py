@@ -9,7 +9,6 @@ def index(request):
     
     number_companies = companies.count()
     avg_year = int(companies.aggregate(Avg("year"))['year__avg'])
-    print(avg_year)
     
     return render(request, 'about_companies/index.html', {
         'companies' : companies,
